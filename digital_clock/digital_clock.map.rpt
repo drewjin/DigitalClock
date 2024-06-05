@@ -1,0 +1,620 @@
+Analysis & Synthesis report for digital_clock
+Wed Jun 05 20:43:14 2024
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Multiplexer Restructuring Statistics (Restructuring Performed)
+  9. Parameter Settings for User Entity Instance: 74161:inst
+ 10. Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst
+ 11. Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst1
+ 12. Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst2
+ 13. Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst3
+ 14. Parameter Settings for User Entity Instance: counter1:inst43|74161:inst5
+ 15. Parameter Settings for User Entity Instance: counter2:inst44|74161:inst5
+ 16. Parameter Settings for User Entity Instance: counter3:inst49|74161:inst5
+ 17. Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst
+ 18. Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst1
+ 19. Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst2
+ 20. Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst3
+ 21. Parameter Settings for User Entity Instance: counter1:inst39|74161:inst5
+ 22. Parameter Settings for User Entity Instance: counter2:inst40|74161:inst5
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Jun 05 20:43:14 2024         ;
+; Quartus II Version          ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name               ; digital_clock                                 ;
+; Top-level Entity Name       ; digital_clock                                 ;
+; Family                      ; Stratix                                       ;
+; Total logic elements        ; 154                                           ;
+; Total pins                  ; 27                                            ;
+; Total virtual pins          ; 0                                             ;
+; Total memory bits           ; 0                                             ;
+; DSP block 9-bit elements    ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
+; Total DLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                              ; digital_clock      ; digital_clock      ;
+; Family name                                                        ; Stratix            ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Stratix/Stratix GX                       ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto DSP Block Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; Unlimited          ; Unlimited          ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Maximum Number of M-RAM Memory Blocks                              ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+
+; digital_clock.bdf                ; yes             ; User Block Diagram/Schematic File  ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/digital_clock.bdf ;
+; counter1.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/counter1.bdf      ;
+; counter2.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/counter2.bdf      ;
+; counter3.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/counter3.bdf      ;
+; 81mux4.bdf                       ; yes             ; User Block Diagram/Schematic File  ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/81mux4.bdf        ;
+; control_main.bdf                 ; yes             ; User Block Diagram/Schematic File  ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/control_main.bdf  ;
+; 74138.bdf                        ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/74138.bdf                  ;
+; 74161.tdf                        ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/74161.tdf                  ;
+; aglobal.inc                      ; yes             ; Other                              ; s:/altera/libraries/megafunctions/aglobal.inc                  ;
+; f74161.bdf                       ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/f74161.bdf                 ;
+; 7448.bdf                         ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/7448.bdf                   ;
+; 21mux.bdf                        ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/21mux.bdf                  ;
+; 81mux.tdf                        ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/81mux.tdf                  ;
+; f81mux.bdf                       ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/f81mux.bdf                 ;
+; 74160.bdf                        ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/74160.bdf                  ;
+; 74153.bdf                        ; yes             ; Megafunction                       ; s:/altera/libraries/others/maxplus2/74153.bdf                  ;
+; control_alarm.bdf                ; yes             ; Other                              ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/control_alarm.bdf ;
+; comp.bdf                         ; yes             ; Other                              ; D:/Y2/S4/Hardware/DigitalClock/digital_clock/comp.bdf          ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Total logic elements                        ; 154                     ;
+;     -- Combinational with no register       ; 111                     ;
+;     -- Register only                        ; 0                       ;
+;     -- Combinational with a register        ; 43                      ;
+;                                             ;                         ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 64                      ;
+;     -- 3 input functions                    ; 36                      ;
+;     -- 2 input functions                    ; 52                      ;
+;     -- 1 input functions                    ; 2                       ;
+;     -- 0 input functions                    ; 0                       ;
+;         -- Combinational cells for routing  ; 0                       ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 152                     ;
+;     -- arithmetic mode                      ; 2                       ;
+;     -- qfbk mode                            ; 0                       ;
+;     -- register cascade mode                ; 0                       ;
+;     -- synchronous clear/load mode          ; 0                       ;
+;     -- asynchronous clear/load mode         ; 43                      ;
+;                                             ;                         ;
+; Total registers                             ; 43                      ;
+; Total logic cells in carry chains           ; 3                       ;
+; I/O pins                                    ; 27                      ;
+; Maximum fan-out node                        ; 74161:inst|f74161:sub|9 ;
+; Maximum fan-out                             ; 27                      ;
+; Total fan-out                               ; 574                     ;
+; Average fan-out                             ; 3.17                    ;
++---------------------------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; M512s ; M4Ks ; M-RAMs ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                   ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------+
+; |digital_clock             ; 154 (5)     ; 43           ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 27   ; 0            ; 111 (5)      ; 0 (0)             ; 43 (0)           ; 3 (0)           ; 0 (0)      ; |digital_clock                                        ;
+;    |21mux:inst16|          ; 8 (8)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|21mux:inst16                           ;
+;    |21mux:inst17|          ; 8 (8)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|21mux:inst17                           ;
+;    |21mux:inst18|          ; 8 (8)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|21mux:inst18                           ;
+;    |21mux:inst19|          ; 12 (12)     ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|21mux:inst19                           ;
+;    |74138:inst1|           ; 8 (8)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|74138:inst1                            ;
+;    |74161:inst|            ; 3 (0)       ; 3            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 3 (0)           ; 0 (0)      ; |digital_clock|74161:inst                             ;
+;       |f74161:sub|         ; 3 (3)       ; 3            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 3 (3)           ; 0 (0)      ; |digital_clock|74161:inst|f74161:sub                  ;
+;    |7448:inst20|           ; 7 (7)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|7448:inst20                            ;
+;    |control_alarm:inst38|  ; 2 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|control_alarm:inst38                   ;
+;       |74153:inst2|        ; 2 (2)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|control_alarm:inst38|74153:inst2       ;
+;    |control_main:inst65|   ; 4 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|control_main:inst65                    ;
+;       |74153:inst2|        ; 3 (3)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|control_main:inst65|74153:inst2        ;
+;       |74153:inst3|        ; 1 (1)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|control_main:inst65|74153:inst3        ;
+;    |counter1:inst39|       ; 17 (2)      ; 8            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 9 (2)        ; 0 (0)             ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst39                        ;
+;       |74160:inst|         ; 5 (5)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst39|74160:inst             ;
+;       |74161:inst5|        ; 10 (0)      ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst39|74161:inst5            ;
+;          |f74161:sub|      ; 10 (10)     ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst39|74161:inst5|f74161:sub ;
+;    |counter1:inst43|       ; 19 (1)      ; 8            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 11 (1)       ; 0 (0)             ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst43                        ;
+;       |74160:inst|         ; 8 (8)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst43|74160:inst             ;
+;       |74161:inst5|        ; 10 (0)      ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst43|74161:inst5            ;
+;          |f74161:sub|      ; 10 (10)     ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter1:inst43|74161:inst5|f74161:sub ;
+;    |counter2:inst40|       ; 17 (1)      ; 8            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 9 (1)        ; 0 (0)             ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst40                        ;
+;       |74160:inst|         ; 6 (6)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst40|74160:inst             ;
+;       |74161:inst5|        ; 10 (0)      ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst40|74161:inst5            ;
+;          |f74161:sub|      ; 10 (10)     ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst40|74161:inst5|f74161:sub ;
+;    |counter2:inst44|       ; 19 (1)      ; 8            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 11 (1)       ; 0 (0)             ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst44                        ;
+;       |74160:inst|         ; 8 (8)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst44|74160:inst             ;
+;       |74161:inst5|        ; 10 (0)      ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst44|74161:inst5            ;
+;          |f74161:sub|      ; 10 (10)     ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter2:inst44|74161:inst5|f74161:sub ;
+;    |counter3:inst49|       ; 17 (1)      ; 8            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 9 (1)        ; 0 (0)             ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter3:inst49                        ;
+;       |74160:inst|         ; 6 (6)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter3:inst49|74160:inst             ;
+;       |74161:inst5|        ; 10 (0)      ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter3:inst49|74161:inst5            ;
+;          |f74161:sub|      ; 10 (10)     ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |digital_clock|counter3:inst49|74161:inst5|f74161:sub ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 43    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 43    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |digital_clock|21mux:inst19|5 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 74161:inst ;
++------------------------+---------+----------------------+
+; Parameter Name         ; Value   ; Type                 ;
++------------------------+---------+----------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped              ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY           ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY         ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE         ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE       ;
++------------------------+---------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst ;
++------------------------+---------+------------------------------------+
+; Parameter Name         ; Value   ; Type                               ;
++------------------------+---------+------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                            ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                     ;
++------------------------+---------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst1 ;
++------------------------+---------+-------------------------------------+
+; Parameter Name         ; Value   ; Type                                ;
++------------------------+---------+-------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                      ;
++------------------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst2 ;
++------------------------+---------+-------------------------------------+
+; Parameter Name         ; Value   ; Type                                ;
++------------------------+---------+-------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                      ;
++------------------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst15|81mux:inst3 ;
++------------------------+---------+-------------------------------------+
+; Parameter Name         ; Value   ; Type                                ;
++------------------------+---------+-------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                      ;
++------------------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter1:inst43|74161:inst5 ;
++------------------------+---------+---------------------------------------+
+; Parameter Name         ; Value   ; Type                                  ;
++------------------------+---------+---------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                        ;
++------------------------+---------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter2:inst44|74161:inst5 ;
++------------------------+---------+---------------------------------------+
+; Parameter Name         ; Value   ; Type                                  ;
++------------------------+---------+---------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                        ;
++------------------------+---------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter3:inst49|74161:inst5 ;
++------------------------+---------+---------------------------------------+
+; Parameter Name         ; Value   ; Type                                  ;
++------------------------+---------+---------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                        ;
++------------------------+---------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst ;
++------------------------+---------+------------------------------------+
+; Parameter Name         ; Value   ; Type                               ;
++------------------------+---------+------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                            ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                     ;
++------------------------+---------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst1 ;
++------------------------+---------+-------------------------------------+
+; Parameter Name         ; Value   ; Type                                ;
++------------------------+---------+-------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                      ;
++------------------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst2 ;
++------------------------+---------+-------------------------------------+
+; Parameter Name         ; Value   ; Type                                ;
++------------------------+---------+-------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                      ;
++------------------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 81mux4:inst28|81mux:inst3 ;
++------------------------+---------+-------------------------------------+
+; Parameter Name         ; Value   ; Type                                ;
++------------------------+---------+-------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                      ;
++------------------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter1:inst39|74161:inst5 ;
++------------------------+---------+---------------------------------------+
+; Parameter Name         ; Value   ; Type                                  ;
++------------------------+---------+---------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                        ;
++------------------------+---------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter2:inst40|74161:inst5 ;
++------------------------+---------+---------------------------------------+
+; Parameter Name         ; Value   ; Type                                  ;
++------------------------+---------+---------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                        ;
++------------------------+---------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Jun 05 20:43:14 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
+Info: Found 1 design units, including 1 entities, in source file digital_clock.bdf
+    Info: Found entity 1: digital_clock
+Info: Found 1 design units, including 1 entities, in source file counter1.bdf
+    Info: Found entity 1: counter1
+Info: Found 1 design units, including 1 entities, in source file counter2.bdf
+    Info: Found entity 1: counter2
+Info: Found 1 design units, including 1 entities, in source file counter3.bdf
+    Info: Found entity 1: counter3
+Warning: Can't analyze file -- file D:/Y2/S4/Hardware/DigitalClock/digital_clock/81mux.bdf is missing
+Info: Found 1 design units, including 1 entities, in source file 81mux4.bdf
+    Info: Found entity 1: 81mux4
+Warning: Can't analyze file -- file D:/Y2/S4/Hardware/DigitalClock/digital_clock/control1.bdf is missing
+Info: Found 1 design units, including 1 entities, in source file control_main.bdf
+    Info: Found entity 1: control_main
+Info: Elaborating entity "digital_clock" for the top level hierarchy
+Warning: Port "d2" of type 81mux4 and instance "inst15" is missing source signal
+Warning: Port "d5" of type 81mux4 and instance "inst15" is missing source signal
+Warning: Port "d2" of type 81mux4 and instance "inst28" is missing source signal
+Warning: Port "d5" of type 81mux4 and instance "inst28" is missing source signal
+Warning: Port "d6" of type 81mux4 and instance "inst28" is missing source signal
+Warning: Port "d7" of type 81mux4 and instance "inst28" is missing source signal
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/74138.bdf
+    Info: Found entity 1: 74138
+Info: Elaborating entity "74138" for hierarchy "74138:inst1"
+Info: Elaborated megafunction instantiation "74138:inst1"
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/74161.tdf
+    Info: Found entity 1: 74161
+Info: Elaborating entity "74161" for hierarchy "74161:inst"
+Info: Elaborated megafunction instantiation "74161:inst"
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/f74161.bdf
+    Info: Found entity 1: f74161
+Info: Elaborating entity "f74161" for hierarchy "74161:inst|f74161:sub"
+Info: Elaborated megafunction instantiation "74161:inst|f74161:sub", which is child of megafunction instantiation "74161:inst"
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/7448.bdf
+    Info: Found entity 1: 7448
+Info: Elaborating entity "7448" for hierarchy "7448:inst20"
+Info: Elaborated megafunction instantiation "7448:inst20"
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/21mux.bdf
+    Info: Found entity 1: 21mux
+Info: Elaborating entity "21mux" for hierarchy "21mux:inst16"
+Info: Elaborated megafunction instantiation "21mux:inst16"
+Info: Elaborating entity "81mux4" for hierarchy "81mux4:inst15"
+Warning: Port "GN" of type 81mux and instance "inst" is missing source signal
+Warning: Port "GN" of type 81mux and instance "inst1" is missing source signal
+Warning: Port "GN" of type 81mux and instance "inst2" is missing source signal
+Warning: Port "GN" of type 81mux and instance "inst3" is missing source signal
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/81mux.tdf
+    Info: Found entity 1: 81mux
+Info: Elaborating entity "81mux" for hierarchy "81mux4:inst15|81mux:inst"
+Info: Elaborated megafunction instantiation "81mux4:inst15|81mux:inst"
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/f81mux.bdf
+    Info: Found entity 1: f81mux
+Info: Elaborating entity "f81mux" for hierarchy "81mux4:inst15|81mux:inst|f81mux:sub"
+Info: Elaborated megafunction instantiation "81mux4:inst15|81mux:inst|f81mux:sub", which is child of megafunction instantiation "81mux4:inst15|81mux:inst"
+Info: Elaborating entity "counter1" for hierarchy "counter1:inst43"
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/74160.bdf
+    Info: Found entity 1: 74160
+Info: Elaborating entity "74160" for hierarchy "counter1:inst43|74160:inst"
+Info: Elaborated megafunction instantiation "counter1:inst43|74160:inst"
+Info: Elaborating entity "74161" for hierarchy "counter1:inst43|74161:inst5"
+Info: Elaborated megafunction instantiation "counter1:inst43|74161:inst5"
+Info: Elaborating entity "control_main" for hierarchy "control_main:inst65"
+Warning: Port "B" of type 21mux and instance "inst" is missing source signal
+Warning: Port "2C0" of type 74153 and instance "inst2" is missing source signal
+Warning: Port "1C3" of type 74153 and instance "inst2" is missing source signal
+Warning: Port "2C1" of type 74153 and instance "inst2" is missing source signal
+Warning: Port "A" of type 21mux and instance "inst1" is missing source signal
+Warning: Port "1C1" of type 74153 and instance "inst3" is missing source signal
+Warning: Port "2C0" of type 74153 and instance "inst3" is missing source signal
+Warning: Port "2GN" of type 74153 and instance "inst3" is missing source signal
+Warning: Port "2C2" of type 74153 and instance "inst3" is missing source signal
+Warning: Port "1C3" of type 74153 and instance "inst3" is missing source signal
+Warning: Port "2C1" of type 74153 and instance "inst3" is missing source signal
+Warning: Port "2C3" of type 74153 and instance "inst3" is missing source signal
+Info: Found 1 design units, including 1 entities, in source file s:/altera/libraries/others/maxplus2/74153.bdf
+    Info: Found entity 1: 74153
+Info: Elaborating entity "74153" for hierarchy "control_main:inst65|74153:inst2"
+Info: Elaborated megafunction instantiation "control_main:inst65|74153:inst2"
+Info: Elaborating entity "counter2" for hierarchy "counter2:inst44"
+Info: Elaborating entity "counter3" for hierarchy "counter3:inst49"
+Warning: Using design file control_alarm.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: control_alarm
+Info: Elaborating entity "control_alarm" for hierarchy "control_alarm:inst38"
+Warning: Port "1C1" of type 74153 and instance "inst2" is missing source signal
+Warning: Port "A" of type 21mux and instance "inst1" is missing source signal
+Warning: Port "B" of type 21mux and instance "inst" is missing source signal
+Warning: Port "1C3" of type 74153 and instance "inst2" is missing source signal
+Warning: Port "2C1" of type 74153 and instance "inst2" is missing source signal
+Warning: Port "2C3" of type 74153 and instance "inst2" is missing source signal
+Warning: Using design file comp.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: comp
+Info: Elaborating entity "comp" for hierarchy "comp:inst47"
+Info: Ignored 16 buffer(s)
+    Info: Ignored 16 CASCADE buffer(s)
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "dp" stuck at GND
+Info: Converted 6 single input CARRY primitives to CARRY_SUM primitives
+Warning: Ignored 15 CARRY_SUM primitives
+    Warning: Ignored 15 CARRY_SUM primitive(s) -- cannot place fan-out logic in single logic cell
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter1:inst39|74161:inst5|f74161:sub|85~0" into a single logic cell
+            Warning: Node "counter1:inst39|74161:inst5|f74161:sub|94" of type LUT
+            Warning: Node "counter1:inst39|74161:inst5|f74161:sub|97~21" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter1:inst39|74161:inst5|f74161:sub|81~0" into a single logic cell
+            Warning: Node "counter1:inst39|74161:inst5|f74161:sub|84" of type LUT
+            Warning: Node "counter1:inst39|74161:inst5|f74161:sub|90~21" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter1:inst39|74161:inst5|f74161:sub|82~0" into a single logic cell
+            Warning: Node "counter1:inst39|74161:inst5|f74161:sub|80" of type LUT
+            Warning: Node "counter1:inst39|74161:inst5|f74161:sub|78~21" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter3:inst49|74161:inst5|f74161:sub|85~0" into a single logic cell
+            Warning: Node "counter3:inst49|74161:inst5|f74161:sub|94" of type LUT
+            Warning: Node "counter3:inst49|74161:inst5|f74161:sub|97" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter3:inst49|74161:inst5|f74161:sub|81~0" into a single logic cell
+            Warning: Node "counter3:inst49|74161:inst5|f74161:sub|84" of type LUT
+            Warning: Node "counter3:inst49|74161:inst5|f74161:sub|90" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter3:inst49|74161:inst5|f74161:sub|82~0" into a single logic cell
+            Warning: Node "counter3:inst49|74161:inst5|f74161:sub|80" of type LUT
+            Warning: Node "counter3:inst49|74161:inst5|f74161:sub|78" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter2:inst44|74161:inst5|f74161:sub|85~0" into a single logic cell
+            Warning: Node "counter2:inst44|74161:inst5|f74161:sub|94" of type LUT
+            Warning: Node "counter2:inst44|74161:inst5|f74161:sub|97" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter2:inst44|74161:inst5|f74161:sub|81~0" into a single logic cell
+            Warning: Node "counter2:inst44|74161:inst5|f74161:sub|84" of type LUT
+            Warning: Node "counter2:inst44|74161:inst5|f74161:sub|90" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter2:inst44|74161:inst5|f74161:sub|82~0" into a single logic cell
+            Warning: Node "counter2:inst44|74161:inst5|f74161:sub|80" of type LUT
+            Warning: Node "counter2:inst44|74161:inst5|f74161:sub|78" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter1:inst43|74161:inst5|f74161:sub|85~0" into a single logic cell
+            Warning: Node "counter1:inst43|74161:inst5|f74161:sub|94" of type LUT
+            Warning: Node "counter1:inst43|74161:inst5|f74161:sub|97~45" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter1:inst43|74161:inst5|f74161:sub|81~0" into a single logic cell
+            Warning: Node "counter1:inst43|74161:inst5|f74161:sub|84" of type LUT
+            Warning: Node "counter1:inst43|74161:inst5|f74161:sub|90~45" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter1:inst43|74161:inst5|f74161:sub|82~0" into a single logic cell
+            Warning: Node "counter1:inst43|74161:inst5|f74161:sub|80" of type LUT
+            Warning: Node "counter1:inst43|74161:inst5|f74161:sub|78~45" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter2:inst40|74161:inst5|f74161:sub|85~0" into a single logic cell
+            Warning: Node "counter2:inst40|74161:inst5|f74161:sub|94" of type LUT
+            Warning: Node "counter2:inst40|74161:inst5|f74161:sub|97" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter2:inst40|74161:inst5|f74161:sub|81~0" into a single logic cell
+            Warning: Node "counter2:inst40|74161:inst5|f74161:sub|84" of type LUT
+            Warning: Node "counter2:inst40|74161:inst5|f74161:sub|90" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "counter2:inst40|74161:inst5|f74161:sub|82~0" into a single logic cell
+            Warning: Node "counter2:inst40|74161:inst5|f74161:sub|80" of type LUT
+            Warning: Node "counter2:inst40|74161:inst5|f74161:sub|78" of type LUT
+Info: Implemented 181 device resources after synthesis - the final resource count might be different
+    Info: Implemented 8 input pins
+    Info: Implemented 19 output pins
+    Info: Implemented 154 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 81 warnings
+    Info: Processing ended: Wed Jun 05 20:43:14 2024
+    Info: Elapsed time: 00:00:00
+
+

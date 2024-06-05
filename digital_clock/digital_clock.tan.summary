@@ -1,0 +1,116 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.900 ns
+From           : B
+To             : counter2:inst44|74160:inst|8
+From Clock     : --
+To Clock       : B
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.372 ns
+From           : counter2:inst44|74161:inst5|f74161:sub|99
+To             : OB
+From Clock     : TURN
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.084 ns
+From           : A
+To             : OB
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.427 ns
+From           : B
+To             : counter1:inst43|74160:inst|6
+From Clock     : --
+To Clock       : change
+Failed Paths   : 0
+
+Type           : Clock Setup: 'TURN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 329.27 MHz ( period = 3.037 ns )
+From           : counter2:inst44|74161:inst5|f74161:sub|99
+To             : counter1:inst43|74161:inst5|f74161:sub|110
+From Clock     : TURN
+To Clock       : TURN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'A'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 330.58 MHz ( period = 3.025 ns )
+From           : counter2:inst44|74161:inst5|f74161:sub|99
+To             : counter1:inst43|74161:inst5|f74161:sub|110
+From Clock     : A
+To Clock       : A
+Failed Paths   : 0
+
+Type           : Clock Setup: 'B'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 335.01 MHz ( period = 2.985 ns )
+From           : counter2:inst44|74161:inst5|f74161:sub|99
+To             : counter1:inst43|74161:inst5|f74161:sub|110
+From Clock     : B
+To Clock       : B
+Failed Paths   : 0
+
+Type           : Clock Setup: 'change'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 337.84 MHz ( period = 2.960 ns )
+From           : counter2:inst44|74161:inst5|f74161:sub|99
+To             : counter1:inst43|74161:inst5|f74161:sub|110
+From Clock     : change
+To Clock       : change
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk1'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 340.95 MHz ( period = 2.933 ns )
+From           : counter3:inst49|74160:inst|6
+To             : counter3:inst49|74161:inst5|f74161:sub|99
+From Clock     : clk1
+To Clock       : clk1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 422.12 MHz ( period = 2.369 ns )
+From           : 74161:inst|f74161:sub|9
+To             : 74161:inst|f74161:sub|99
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

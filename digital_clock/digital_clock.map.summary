@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Wed Jun 05 20:43:14 2024
+Quartus II Version : 6.0 Build 202 06/20/2006 SP 1 SJ Full Version
+Revision Name : digital_clock
+Top-level Entity Name : digital_clock
+Family : Stratix
+Total logic elements : 154
+Total pins : 27
+Total virtual pins : 0
+Total memory bits : 0
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

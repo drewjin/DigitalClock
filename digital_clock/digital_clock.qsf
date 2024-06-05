@@ -38,3 +38,6 @@ set_global_assignment -name BDF_FILE 81mux.bdf
 set_global_assignment -name BDF_FILE 81mux4.bdf
 set_global_assignment -name BDF_FILE control1.bdf
 set_global_assignment -name BDF_FILE control_main.bdf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name CHECK_OUTPUTS OFF
+set_global_assignment -name SIMULATOR_GENERATE_SIGNAL_ACTIVITY_FILE OFF

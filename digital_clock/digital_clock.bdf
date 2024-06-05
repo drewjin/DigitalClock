@@ -3265,15 +3265,6 @@ applicable agreement for further details.
 	(pt 1328 552)
 )
 (connector
-	(text "A" (rect 1258 296 1265 308)(font "Arial" ))
-	(pt 1248 312)
-	(pt 1328 312)
-)
-(connector
-	(pt 1328 312)
-	(pt 1344 312)
-)
-(connector
 	(pt 1536 288)
 	(pt 1536 360)
 )
@@ -3324,11 +3315,6 @@ applicable agreement for further details.
 (connector
 	(pt 1440 752)
 	(pt 1424 752)
-)
-(connector
-	(text "reset1" (rect 1522 648 1552 660)(font "Arial" ))
-	(pt 1512 664)
-	(pt 1568 664)
 )
 (connector
 	(pt 1424 752)
@@ -3681,6 +3667,20 @@ applicable agreement for further details.
 (connector
 	(pt 600 -88)
 	(pt 1688 -88)
+)
+(connector
+	(text "reset_alarm" (rect 1522 648 1579 660)(font "Arial" ))
+	(pt 1512 664)
+	(pt 1568 664)
+)
+(connector
+	(pt 1328 312)
+	(pt 1344 312)
+)
+(connector
+	(text "A" (rect 1298 296 1305 308)(font "Arial" ))
+	(pt 1288 312)
+	(pt 1328 312)
 )
 (junction (pt 720 752))
 (junction (pt 744 896))
