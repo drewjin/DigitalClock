@@ -14,7 +14,7 @@
 
 
 # The default values for assignments are stored in the file
-#		digital_clock_assignment_defaults.qdf
+#		control_main_assignment_defaults.qdf
 # If this file doesn't exist, and for assignments not listed, see file
 #		assignment_defaults.qdf
 
@@ -25,19 +25,10 @@
 
 set_global_assignment -name FAMILY ACEX1K
 set_global_assignment -name DEVICE "EP1K50TC144-3"
-set_global_assignment -name TOP_LEVEL_ENTITY digital_clock
+set_global_assignment -name TOP_LEVEL_ENTITY control_main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "6.0 SP1"
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:16:40  JUNE 03, 2024"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:05:02  JUNE 06, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "6.0 SP1"
-set_global_assignment -name BDF_FILE digital_clock.bdf
-set_global_assignment -name BDF_FILE counter1.bdf
-set_global_assignment -name BDF_FILE counter2.bdf
-set_global_assignment -name BDF_FILE counter3.bdf
-set_global_assignment -name BDF_FILE 81mux.bdf
-set_global_assignment -name BDF_FILE 81mux4.bdf
-set_global_assignment -name BDF_FILE control1.bdf
 set_global_assignment -name BDF_FILE control_main.bdf
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
-set_global_assignment -name CHECK_OUTPUTS OFF
-set_global_assignment -name SIMULATOR_GENERATE_SIGNAL_ACTIVITY_FILE OFF
-set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name VECTOR_WAVEFORM_FILE control_main.vwf
